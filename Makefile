@@ -1,5 +1,5 @@
 
-VERSION=0.75
+VERSION=0.76
 FILES=$(shell ls usr/share/applications/*.desktop usr/share/pixmaps/*.xpm usr/share/icons/*.png usr/share/icons/64x64/apps/*.png usr/local/bin/* usr/share/menu/* | grep -v CVS | grep -v Root | grep -v Entries | grep -v Repository) 
 
 all: 
