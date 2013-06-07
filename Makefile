@@ -17,5 +17,6 @@ all:
 	
 
 clean:
+	rm -rf debian
 	rm *.deb
 	find . -name "*~" -exec rm {} \;
