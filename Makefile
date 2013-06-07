@@ -20,3 +20,7 @@ clean:
 	rm -rf debian
 	rm *.deb
 	find . -name "*~" -exec rm {} \;
+
+install:
+	sudo dpkg -i winstart_${VERSION}_all.deb
+	sudo apt-get install -f
