@@ -1,0 +1,14 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Microsoft Office Word 
+Comment=Word
+Type=Application
+Exec=word %F
+Icon=/usr/share/icons/ms-word-icon.png
+Name[nl]=MS Word 
+Comment[nl]=MS Word 
+Categories=Office;GTK
+StartupNotify=true
+Terminal=false
+GenericName=Word Processor
+X-MultipleArgs=false

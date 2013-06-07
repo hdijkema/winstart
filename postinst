@@ -1,0 +1,23 @@
+#!/bin/sh
+
+F="FILES"
+for i in $F 
+do
+  chown root "/$i"
+  chgrp root "/$i"
+  G=`echo $i | grep bin`
+  if [ "$G" = "" ]; then
+    chmod 644 "/$i"
+  else 
+    chmod 755 "/$i"
+  fi
+done
+
+DEF=/etc/gnome/defaults.list
+
+mkdir -p /usr/share/winstart
+DT=`date +%Y%m%d-%H%M%S`
+cp $DEF /usr/share/winstart/defaults.list.$DT
+cp $DEF /usr/share/winstart/defaults.list.last
+
+if test -x /usr/bin/update-menus; then update-menus; fi

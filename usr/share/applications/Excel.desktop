@@ -1,0 +1,14 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Microsoft Office Excel
+Comment=PlayOnLinux
+Type=Application
+Exec=excel %F
+Icon=/usr/share/icons/ms-excel-icon.png
+Name[nl]=MS Excel 
+Comment[nl]=MS Excel 
+Categories=Office;GTK
+StartupNotify=true
+Terminal=false
+GenericName=Spreadsheet
+X-MultipleArgs=false

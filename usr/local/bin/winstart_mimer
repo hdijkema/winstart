@@ -1,0 +1,65 @@
+#!/usr/bin/perl
+use strict;
+use Config::IniFiles;
+use File::HomeDir;
+
+my $home=File::HomeDir->my_home();
+my $inifile="$home/.local/share/applications/mimeapps.list";
+my $cfg=new Config::IniFiles( -file => $inifile);
+if (not(defined($cfg))) {
+  $cfg=new Config::IniFiles();
+  $cfg->SetFileName($inifile);
+}
+
+my $D="Default Applications";
+my $A="application";
+
+my @openxml=(
+  "application/vnd.openxmlformats-officedocument.wordprocessingml.document=Word.desktop",
+  "application/vnd.openxmlformats-officedocument.wordprocessingml.template=Word.desktop",
+  "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet=Excel.desktop",
+  "application/vnd.openxmlformats-officedocument.spreadsheetml.template=Excel.desktop",
+  "application/vnd.openxmlformats-officedocument.presentationml.slide=Powerpnt.desktop",
+  "application/vnd.openxmlformats-officedocument.presentationml.slideshow=Powerpnt.desktop",
+  "application/vnd.openxmlformats-officedocument.presentationml.presentation=Powerpnt.desktop",
+  "application/vnd.openxmlformats-officedocument.presentationml.template=Powerpnt.desktop",
+  "application/vnd.ms-powerpoint=Powerpnt.desktop"
+);
+
+foreach my $pair (@openxml) {
+  my ($k,$v)=split /[=]/,$pair;
+  setv($cfg,$D,$k,$v);
+}
+
+setv($cfg,$D,"$A/msexcel","Excel.desktop");
+setv($cfg,$D,"$A/excel","Excel.desktop");
+setv($cfg,$D,"$A/x-ms-excel","Excel.desktop");
+setv($cfg,$D,"$A/x-msexcel","Excel.desktop");
+setv($cfg,$D,"$A/x-excel","Excel.desktop");
+setv($cfg,$D,"$A/vnd.ms-excel","Excel.desktop");
+
+setv($cfg,$D,"$A/msword","Word.desktop");
+setv($cfg,$D,"$A/vnd.ms-word","Word.desktop");
+setv($cfg,$D,"text/richtext","Word.desktop");
+
+setv($cfg,$D,"$A/mspowerpnt","Powerpnt.desktop");
+setv($cfg,$D,"$A/ms-powerpnt","Powerpnt.desktop");
+setv($cfg,$D,"$A/vnd.ms-powerpnt","Powerpnt.desktop");
+
+setv($cfg,$D,"$A/vnd.visio","Visio.desktop");
+
+$cfg->RewriteConfig();
+
+sub setv($$$$) {
+  my $cfg=shift;
+  my $D=shift;
+  my $M=shift;
+  my $V=shift;
+  if (not($cfg->setval($D,$M,$V))) {
+    $cfg->newval($D,$M,$V);
+  } 
+}
+
+
+
+

@@ -1,0 +1,14 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Microsoft Office Visio  
+Comment=Word
+Type=Application
+Exec=visio %F
+Icon=/usr/share/icons/ms-visio-icon.png
+Name[nl]=MS Visio  
+Comment[nl]=MS Visio  
+Categories=Office;GTK
+StartupNotify=true
+Terminal=false
+GenericName=Drawing Program
+X-MultipleArgs=false

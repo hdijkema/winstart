@@ -1,0 +1,9 @@
+?package(powerpnt):\ 
+        needs="X11"\ 
+        section="Applications/Office"\
+	hints="Office"\
+	title="Excel"\
+	icon="/usr/share/pixmaps/powerpnt.xpm"\
+	icon32x32="/usr/share/pixmaps/powerpnt.xpm"\
+	icon16x16="/usr/share/pixmaps/powerpnt-16.xpm"\
+	command="/usr/local/bin/powerpnt"

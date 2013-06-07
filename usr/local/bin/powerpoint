@@ -1,0 +1,4 @@
+#!/bin/bash
+echo $@ >>/tmp/office2010
+#exec vmware-unity-helper --run $HOME/vmware/WinXPOffice2010/Windows\ XP\ Professional.vmx "C:\\Program Files\\Microsoft Office\\Office14\\powerpnt.exe" "$@"
+exec vmware-unity-helper --run $HOME/vmware/Windows\ 8/Windows\ 8.vmx "C:\\Program Files\\Microsoft Office\\Office15\\powerpnt.exe" "$@"

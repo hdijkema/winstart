@@ -1,0 +1,9 @@
+?package(word):\ 
+        needs="X11"\ 
+        section="Applications/Office"\
+	hints="Office"\
+	title="Excel"\
+	icon="/usr/share/pixmaps/word.xpm"\
+	icon32x32="/usr/share/pixmaps/word.xpm"\
+	icon16x16="/usr/share/pixmaps/word-16.xpm"\
+	command="/usr/local/bin/word"

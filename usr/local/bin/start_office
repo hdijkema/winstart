@@ -1,0 +1,25 @@
+#!/bin/bash
+
+DEF=$HOME/.local/share/applications/mimeapps.list
+
+mkdir -p $HOME/.local/share/applications
+mkdir -p $HOME/.winstart
+
+if [ ! -r $HOME/.winstart/mimeapps.list.bck ]; then
+  if [ -e $DEF ]; then
+    cp $DEF $HOME/.winstart/mimeapps.list.bck
+  else 
+    touch $HOME/.winstart/mimeapps.list.bck
+  fi 
+fi
+
+cat $DEF | grep -v 'application/msexcel' | grep -v 'application/msword' | grep -v 'application/excel' | grep -v 'application/mspowerpoint' | grep -v 'application/ms-powerpoint' | grep -v 'application/x-ms-excel' | grep -v 'application/x-msexcel' | grep -v 'application/vnd.ms-word' | grep -v 'application/vnd.ms-excel' | grep -v 'application/x-dos_ms_excel' | grep -v 'application/x-excel' | grep -v 'application/vnd.ms-powerpoint' | grep -v 'text/richtext' | grep -v 'application/vnd.visio' >$HOME/.winstart/mimeapps.ff
+
+cp $HOME/.winstart/mimeapps.ff $DEF
+
+/usr/local/bin/winstart_mimer
+
+
+## Now start vmplayer
+#vmplayer --unity ~/vmware/WinXPOffice2010/Windows\ XP\ Professional.vmx >$HOME/.office2010.log 2>&1
+vmplayer --unity ~/vmware/Windows\ 8/Windows\ 8.vmx >$HOME/.office.log 2>&1

@@ -1,0 +1,17 @@
+Package: winstart
+Version: VERSION
+Section: windows
+Priority: optional
+Architecture: all
+Essential: no
+Depends:  libfile-homedir-perl, libconfig-inifiles-perl
+Homepage: http://elementals.sf.net/winstart.html
+Installed-Size: 65
+Maintainer: Hans Oesterholt-Dijkema [winstart@oesterholt.net]
+Recommends:
+Suggests:  
+Conflicts:
+Replaces: 
+Provides: winstart
+Description: winstart - A set of icons to start windows applications
+ A set of icons and small shell scripts to start windows applications in seamless mode

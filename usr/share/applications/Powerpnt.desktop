@@ -1,0 +1,14 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Microsoft Office Powerpoint 
+Comment=Word
+Type=Application
+Exec=powerpoint %F
+Icon=/usr/share/icons/ms-powerpnt-icon.png
+Name[nl]=MS Powerpoint 
+Comment[nl]=MS Powerpoint 
+Categories=Office;GTK
+StartupNotify=true
+Terminal=false
+GenericName=Presentation
+X-MultipleArgs=false
